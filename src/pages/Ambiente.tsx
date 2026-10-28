@@ -25,8 +25,8 @@ export function Component() {
   return (
     <>
       <Seo
-        title={`${a.titulo} | Marcenaria Damadi`}
-        description={a.descricao}
+        title={a.seoTitulo}
+        description={`${a.descricao} Orçamento pelo WhatsApp.`}
         path={path}
         jsonLd={[
           jsonLdNegocio(),

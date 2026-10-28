@@ -13,8 +13,8 @@ export function Component() {
   return (
     <>
       <Seo
-        title="Marcenaria Damadi | Móveis planejados sob medida na Zona Norte de SP – Tremembé"
-        description="Móveis planejados sob medida em Tremembé, zona norte de São Paulo. Cozinhas, guarda-roupas, closets e painéis. Mais de 20 anos de marcenaria. Peça orçamento pelo WhatsApp."
+        title="Marcenaria Damadi | Móveis planejados na Zona Norte de SP"
+        description="Móveis planejados sob medida em Tremembé, zona norte de São Paulo. Cozinhas, guarda-roupas, closets e painéis. +20 anos de marcenaria. Orçamento pelo WhatsApp."
         path="/"
         jsonLd={[jsonLdNegocio(), jsonLdFaq(faq)]}
       />

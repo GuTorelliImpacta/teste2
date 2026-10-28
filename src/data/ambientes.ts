@@ -4,6 +4,8 @@ export type Ambiente = {
   /** Texto usado no WhatsApp: "orçamento de [AMBIENTE]" */
   nomeWhats: string;
   titulo: string;
+  /** <title> da página, ≤ 60 caracteres */
+  seoTitulo: string;
   descricao: string;
   texto: string[];
 };
@@ -11,6 +13,7 @@ export type Ambiente = {
 export const ambientes: Ambiente[] = [
   {
     slug: 'cozinha',
+    seoTitulo: 'Cozinha planejada em Tremembé, SP | Marcenaria Damadi',
     nome: 'Cozinha',
     nomeWhats: 'cozinha planejada',
     titulo: 'Cozinha planejada sob medida em Tremembé, SP',
@@ -24,6 +27,7 @@ export const ambientes: Ambiente[] = [
   },
   {
     slug: 'guarda-roupa',
+    seoTitulo: 'Guarda-roupa sob medida na Zona Norte SP | Damadi',
     nome: 'Guarda-roupa e dormitório',
     nomeWhats: 'guarda-roupa ou dormitório',
     titulo: 'Guarda-roupa sob medida e dormitório planejado na zona norte de SP',
@@ -37,6 +41,7 @@ export const ambientes: Ambiente[] = [
   },
   {
     slug: 'closet',
+    seoTitulo: 'Closet planejado sob medida em Tremembé | Damadi',
     nome: 'Closet',
     nomeWhats: 'closet',
     titulo: 'Closet planejado sob medida em Tremembé, São Paulo',
@@ -50,6 +55,7 @@ export const ambientes: Ambiente[] = [
   },
   {
     slug: 'home-office',
+    seoTitulo: 'Home office planejado em Tremembé, SP | Damadi',
     nome: 'Home office',
     nomeWhats: 'home office',
     titulo: 'Home office planejado sob medida na zona norte de São Paulo',
@@ -63,6 +69,7 @@ export const ambientes: Ambiente[] = [
   },
   {
     slug: 'sala-paineis',
+    seoTitulo: 'Painel ripado e móveis de sala em SP | Damadi',
     nome: 'Sala e painéis ripados',
     nomeWhats: 'sala ou painel ripado',
     titulo: 'Painel ripado e móveis para sala sob medida em Tremembé, SP',
@@ -76,6 +83,7 @@ export const ambientes: Ambiente[] = [
   },
   {
     slug: 'espacos-pequenos',
+    seoTitulo: 'Móveis para espaços pequenos em SP | Damadi',
     nome: 'Espaços pequenos',
     nomeWhats: 'espaço pequeno',
     titulo: 'Móveis planejados para espaços pequenos em Tremembé, SP',

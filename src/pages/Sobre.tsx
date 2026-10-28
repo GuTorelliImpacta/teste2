@@ -8,7 +8,7 @@ export function Component() {
   return (
     <>
       <Seo
-        title="Sobre a Marcenaria Damadi | Marceneiro em Tremembé, São Paulo"
+        title="Sobre | Marcenaria Damadi, marceneiro em Tremembé"
         description="Mais de 20 anos de marcenaria na zona norte de São Paulo. Conheça a Damadi Junior e peça seu orçamento de móveis planejados."
         path="/sobre"
         jsonLd={[

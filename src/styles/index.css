@@ -116,6 +116,14 @@
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
     -webkit-text-size-adjust: 100%;
+    color-scheme: light;
+    scroll-padding-bottom: 5rem;
+  }
+  a,
+  button,
+  summary {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgb(184 101 27 / 0.2);
   }
   body {
     font-family: var(--font-sans);
@@ -348,6 +356,9 @@
 }
 .skip-link:focus {
   top: 1rem;
+}
+dialog {
+  overscroll-behavior: contain;
 }
 dialog::backdrop {
   background: rgb(36 26 20 / 0.85);
