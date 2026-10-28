@@ -21,7 +21,8 @@
 - `frame-src https://www.google.com` existe só para o mapa, que carrega apenas sob clique.
 - Proibidos por lint: `dangerouslySetInnerHTML`, `eval`, `new Function`, `innerHTML`.
 - Links externos com `rel="noopener noreferrer"`; mensagens do WhatsApp com `encodeURIComponent` (testado com aspas e `&`).
-- `ignore-scripts`: as dependências instaladas não precisam de `postinstall` próprio além do binário do `sharp`, que o npm resolve por pacote de plataforma. `.npmrc` não desativa scripts para não quebrar o `sharp`/`esbuild`; revisar se algum dia surgir dependência com script novo.
+- **`ignore-scripts=true` no `.npmrc`**: nenhuma dependência roda script de instalação. Verificado com `npm ci` limpo: build, testes e `sharp` funcionam (binários vêm de pacotes de plataforma). Se uma dependência futura exigir script, revisar o código dela antes de liberar.
+- `npm audit --audit-level=high` no CI; Dependabot semanal; lockfile versionado; `assets-cliente/` e `.env*` no `.gitignore`. Ligar *secret scanning*, *push protection* e proteção da branch `main` (checks obrigatórios) nas configurações do GitHub: isso não é feito por código.
 
 ## Performance
 - `reveal` por CSS scroll-driven em vez de `IntersectionObserver` (menos JS, sem estado inicial escondido se o JS falhar). O `IntersectionObserver` só existe no `StickyCTA`.
