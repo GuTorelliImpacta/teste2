@@ -1,5 +1,6 @@
 // Servidor estático que imita a Vercel (cleanUrls, 404.html e headers do vercel.json). Uso: node scripts/serve.mjs [porta]
 import { createServer } from 'node:http';
+import { brotliCompressSync } from 'node:zlib';
 import { existsSync, readFileSync, statSync } from 'node:fs';
 import { extname, join, normalize } from 'node:path';
 
@@ -35,5 +36,12 @@ createServer((req, res) => {
   for (const h of headers) res.setHeader(h.key, h.value);
   res.statusCode = p ? 200 : 404;
   res.setHeader('Content-Type', tipos[extname(final)] || 'application/octet-stream');
-  res.end(readFileSync(final));
+  const corpo = readFileSync(final);
+  const comprimivel = /^(text|application\/(javascript|json|xml))|svg|javascript/.test(
+    res.getHeader('Content-Type'),
+  );
+  if (comprimivel && String(req.headers['accept-encoding'] || '').includes('br')) {
+    res.setHeader('Content-Encoding', 'br');
+    res.end(brotliCompressSync(corpo));
+  } else res.end(corpo);
 }).listen(porta, () => console.log(`dist em http://localhost:${porta}`));
